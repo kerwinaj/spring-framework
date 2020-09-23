@@ -64,6 +64,13 @@ import org.springframework.lang.Nullable;
  */
 public abstract class AbstractRefreshableApplicationContext extends AbstractApplicationContext {
 
+	static {
+		System.out.println("[AbstractRefreshableApplicationContext]static init");
+	}
+	{
+		System.out.println("[AbstractRefreshableApplicationContext]new init");
+	}
+
 	@Nullable
 	private Boolean allowBeanDefinitionOverriding;
 
@@ -79,6 +86,7 @@ public abstract class AbstractRefreshableApplicationContext extends AbstractAppl
 	 * Create a new AbstractRefreshableApplicationContext with no parent.
 	 */
 	public AbstractRefreshableApplicationContext() {
+		System.out.println("[AbstractRefreshableApplicationContext]init");
 	}
 
 	/**
@@ -87,6 +95,7 @@ public abstract class AbstractRefreshableApplicationContext extends AbstractAppl
 	 */
 	public AbstractRefreshableApplicationContext(@Nullable ApplicationContext parent) {
 		super(parent);
+		System.out.println("[AbstractRefreshableApplicationContext]init, parent:"+ parent);
 	}
 
 

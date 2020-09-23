@@ -39,6 +39,12 @@ import org.springframework.util.StringUtils;
 public abstract class AbstractRefreshableConfigApplicationContext extends AbstractRefreshableApplicationContext
 		implements BeanNameAware, InitializingBean {
 
+	static {
+		System.out.println("[AbstractRefreshableConfigApplicationContext]static init");
+	}
+	{
+		System.out.println("[AbstractRefreshableConfigApplicationContext]new init");
+	}
 	@Nullable
 	private String[] configLocations;
 
@@ -49,6 +55,7 @@ public abstract class AbstractRefreshableConfigApplicationContext extends Abstra
 	 * Create a new AbstractRefreshableConfigApplicationContext with no parent.
 	 */
 	public AbstractRefreshableConfigApplicationContext() {
+		System.out.println("[AbstractRefreshableConfigApplicationContext]init");
 	}
 
 	/**
@@ -57,6 +64,7 @@ public abstract class AbstractRefreshableConfigApplicationContext extends Abstra
 	 */
 	public AbstractRefreshableConfigApplicationContext(@Nullable ApplicationContext parent) {
 		super(parent);
+		System.out.println("[AbstractRefreshableConfigApplicationContext]init, parent:"+parent);
 	}
 
 

@@ -51,6 +51,13 @@ import org.springframework.util.Assert;
  */
 public class ClassPathXmlApplicationContext extends AbstractXmlApplicationContext {
 
+	static {
+		System.out.println("[ClassPathXmlApplicationContext]static init");
+	}
+
+	{
+		System.out.println("[ClassPathXmlApplicationContext]new init");
+	}
 	@Nullable
 	private Resource[] configResources;
 

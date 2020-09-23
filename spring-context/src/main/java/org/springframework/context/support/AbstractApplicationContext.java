@@ -128,7 +128,12 @@ import org.springframework.util.ReflectionUtils;
  */
 public abstract class AbstractApplicationContext extends DefaultResourceLoader
 		implements ConfigurableApplicationContext {
-
+	static {
+		System.out.println("[AbstractApplicationContext]static init");
+	}
+	{
+		System.out.println("[AbstractApplicationContext]new init");
+	}
 	/**
 	 * Name of the MessageSource bean in the factory.
 	 * If none is supplied, message resolution is delegated to the parent.
@@ -227,7 +232,9 @@ public abstract class AbstractApplicationContext extends DefaultResourceLoader
 	 * Create a new AbstractApplicationContext with no parent.
 	 */
 	public AbstractApplicationContext() {
+		System.out.println("[AbstractApplicationContext]init");
 		this.resourcePatternResolver = getResourcePatternResolver();
+		System.out.println("[AbstractApplicationContext]init over");
 	}
 
 	/**
@@ -236,6 +243,7 @@ public abstract class AbstractApplicationContext extends DefaultResourceLoader
 	 */
 	public AbstractApplicationContext(@Nullable ApplicationContext parent) {
 		this();
+		System.out.println("[AbstractApplicationContext]init, parent:" + parent);
 		setParent(parent);
 	}
 

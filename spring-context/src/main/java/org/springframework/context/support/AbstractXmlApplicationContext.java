@@ -45,6 +45,14 @@ import org.springframework.lang.Nullable;
  */
 public abstract class AbstractXmlApplicationContext extends AbstractRefreshableConfigApplicationContext {
 
+	static {
+		System.out.println("[AbstractXmlApplicationContext]static init");
+	}
+
+	{
+		System.out.println("[AbstractXmlApplicationContext]new init");
+	}
+
 	private boolean validating = true;
 
 
@@ -52,6 +60,7 @@ public abstract class AbstractXmlApplicationContext extends AbstractRefreshableC
 	 * Create a new AbstractXmlApplicationContext with no parent.
 	 */
 	public AbstractXmlApplicationContext() {
+		System.out.println("[AbstractXmlApplicationContext]init");
 	}
 
 	/**
@@ -60,6 +69,7 @@ public abstract class AbstractXmlApplicationContext extends AbstractRefreshableC
 	 */
 	public AbstractXmlApplicationContext(@Nullable ApplicationContext parent) {
 		super(parent);
+		System.out.println("[AbstractXmlApplicationContext]init, parent:"+parent);
 	}
 
 
