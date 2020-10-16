@@ -5,7 +5,7 @@ public class Person {
 	private String name;
 
 	public Person() {
-		System.out.println("[Person.init]coming");
+		System.out.println("[Person.init]coming, name:"+name+",id:"+id);
 	}
 
 	public Integer getId() {
@@ -28,5 +28,13 @@ public class Person {
 
 	public void initMethod(){
 		System.out.println("[Person.initMethod]coming, name:"+name);
+	}
+
+	@Override
+	public String toString() {
+		return getClass().getName() + "@" + Integer.toHexString(hashCode()) + "{" +
+				"id=" + id +
+				", name='" + name + '\'' +
+				'}';
 	}
 }
